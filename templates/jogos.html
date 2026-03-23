@@ -1,8 +1,30 @@
 {% extends "_base.html" %}
 
 {% block conteudo %}
+
+    {% set estilos = {
+        'acao': 'Ação',
+        'aventura': 'Aventura',
+        'rpg': 'RPG',
+        'esporte': 'Esporte'
+    } %}
+
     <h2>Jogos</h2>
     <hr>
     <p>Lista de jogos</p>
     <a href="jogos_inserir.php">➕ Inserir Jogo</a>
+    <br><br>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Nome</th>
+            <th>Estilo</th>
+        </tr>
+        {% for jogo in jogos %}
+        <tr>
+            <td style="padding: 10px;">{{ jogo.nome }}</td>
+            <td style="padding: 10px;">{{ estilos[jogo.estilo] ?? "Não encontrado" }}</td>
+            <td><img src="img/{{ jogo.capa }}" alt="{{ jogo.nome }}" style="width: 100px; height: auto;"></td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
