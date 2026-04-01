@@ -3,7 +3,7 @@
 {% block conteudo %}
     <h2>Excluir Jogo</h2>
     <hr>
-    <p>Tem certeza que deseja excluir este jogo?</p>
+    <p>Tem certeza que deseja excluir {{ jogo.nome }}?</p>
     <div>
         <form action="jogos_excluir.php" method="POST">
             <input type="hidden" name="id" value="{{ jogo.id }}">
@@ -12,5 +12,5 @@
             <br><br>
         </div>
         <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjMza2N2MHpoaGRwcnYwYTB2bTQ2MWRhZ2h2aW8yc2R3YnExcTMzOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yBmUXojWiBWECSd3Ja/giphy.gif" alt="">
-        
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGM3bGQxejRmeG80azZtemZyaHBnZHQxanM0c3BheTRueG1oOXhkMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hrhZXRWNJ7DLJtSqfG/giphy.gif" alt="">
 {% endblock %}

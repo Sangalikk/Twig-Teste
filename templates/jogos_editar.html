@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+
+{% block conteudo %}
+    <h2>Editar Jogo</h2>
+    <hr>
+    <form action="jogos_editar.php" method="POST">
+        <input type="hidden" name="id" value="{{ jogo.id }}">
+        Nome: <input type="text" id="nome" name="nome" value="{{ jogo.nome }}"><br><br>
+        Estilo: <select name="estilo">
+            <option value="#">Selecione o estilo</option>
+            <option value="acao" {% if jogo.estilo == 'acao' %}selected{% endif %}>Ação</option>
+            <option value="aventura" {% if jogo.estilo == 'aventura' %}selected{% endif %}>Aventura</option>
+            <option value="rpg" {% if jogo.estilo == 'rpg' %}selected{% endif %}>RPG</option>
+            <option value="esporte" {% if jogo.estilo == 'esporte' %}selected{% endif %}>Esporte</option>
+        </select><br><br>
+        Capa: <input type="file" name="capa"><br><br>
+        Imagem atual: <br>
+        <img src="img/{{ jogo.capa }}" alt="Não há imagem ainda" style="width: 100px; height: auto;"><br><br><br>
+        <input type="submit" value="Editar">
+        <a href="jogos.php">Cancelar</a>
+    </form>
+{% endblock %}
