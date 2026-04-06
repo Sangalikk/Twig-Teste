@@ -3,7 +3,7 @@
 {% block conteudo %}
     <h2>Editar Jogo</h2>
     <hr>
-    <form action="jogos_editar.php" method="POST">
+    <form action="jogos_editar.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id" value="{{ jogo.id }}">
         Nome: <input type="text" id="nome" name="nome" value="{{ jogo.nome }}"><br><br>
         Estilo: <select name="estilo">
