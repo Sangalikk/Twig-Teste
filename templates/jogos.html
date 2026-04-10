@@ -21,6 +21,7 @@
             <th>Capa</th>
             <th>Editar</th>
             <th>Excluir</th>
+            <th>Data de Lançamento</th>
         </tr>
         {% for jogo in jogos %}
         <tr>
@@ -28,7 +29,8 @@
             <td style="padding: 10px;">{{ estilos[jogo.estilo] ?? "Não encontrado" }}</td>
             <td><img src="img/{{ jogo.capa }}" alt="{{ jogo.nome }}" style="width: 100px; height: auto;"></td>
             <td><a href="jogos_editar.php?id={{ jogo.id }}" style="text-decoration: none;">✏️</a></td>
-            <td><a href="jogos_excluir.php?id={{ jogo.id }}" style="text-decoration: none;"">❌</a></td>
+            <td><a href="jogos_excluir.php?id={{ jogo.id }}" style="text-decoration: none;">❌</a></td>
+            <td>{{jogo.lancamento}}</td>
         </tr>
         {% endfor %}
     </table>
